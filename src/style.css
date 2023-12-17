@@ -29,9 +29,20 @@
 #content-card {
   width: 300px;
   height: auto;
+  flex: 0 0 auto;
+  margin: 10px;
+
 }
 
 #container-cards {
   padding-top: 75px;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: auto;
+  align-content: start
+
 }
 
