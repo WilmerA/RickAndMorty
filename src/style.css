@@ -24,10 +24,11 @@
 
 #content {
   background-color: #242424;
+  height: 100vh;
 }
 
 #content-card {
-  width: 300px;
+  width: 200px;
   height: auto;
   flex: 0 0 auto;
   margin: 10px;
