@@ -1,13 +1,11 @@
+import { getAllCharacters } from './services/characters/get-all-characters';
 import './style.css'
 
-class Main {
 
-  impress(){
-    console.log( 'imprimiendo' );
-  }  
+const main = () => {
 
+  getAllCharacters();
+  
 }
 
-const main = new Main();
-
-main.impress();
+main();
