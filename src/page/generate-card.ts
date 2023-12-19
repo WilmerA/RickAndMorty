@@ -1,7 +1,6 @@
 
 export const generateCard = ( name:string, urlImage:string, specie:string ):string => {
     return `
-    <div id="content-card">
         <div class="card">
             <div class="card-image">
             <figure class="image is-4by3">
@@ -17,6 +16,5 @@ export const generateCard = ( name:string, urlImage:string, specie:string ):stri
             </div>
             </div>
         </div>
-    </div>
     `
 }
