@@ -1,16 +1,20 @@
 import { ICharacter } from "../interfaces/data.interface";
 import { generateCard } from "./generate-card";
 
-export const loadCards = ( character:ICharacter[] ) => {
+export const loadCards = ( characters:ICharacter[] ) => {
 
     const containerCards = document.querySelector('#container-cards');
 
-    character.forEach( ( character:ICharacter ) => {
+    console.log(characters);
+    
 
-        const card = generateCard( character.name, character.image, character.species )
+    characters.forEach( ( character:ICharacter ) => {
 
-        containerCards!.insertAdjacentHTML( 'beforeend', card );
-        
+        const divContentCard:HTMLDivElement = document.createElement('div');
+        divContentCard.setAttribute('id', 'content-card');
+        const card:string = generateCard( character.name, character.image, character.species );
+        divContentCard.innerHTML = card;
+        containerCards?.appendChild( divContentCard );
 
     } )
 
