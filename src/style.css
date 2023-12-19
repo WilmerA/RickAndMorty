@@ -16,34 +16,31 @@
 #header-search {
   display: grid;
   place-content: center;
-
   margin-top: 50px;
-  margin-bottom: -25px;
-
+  margin-bottom: 50px;
 }
 
 #content {
   background-color: #242424;
-  height: 100vh;
 }
 
 #content-card {
-  width: 200px;
-  height: auto;
+  width: 300px;
   flex: 0 0 auto;
   margin: 10px;
+}
 
+#content-card > .card {
+  min-height: 400px;
 }
 
 #container-cards {
-  padding-top: 75px;
-
+  padding-top: 50px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: center;
   align-items: auto;
-  align-content: start
-
+  align-content: start;
 }
 
