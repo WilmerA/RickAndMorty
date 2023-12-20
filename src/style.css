@@ -2,7 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -27,7 +27,32 @@
 #content-card {
   width: 300px;
   flex: 0 0 auto;
-  margin: 10px;
+  margin: 15px;
+}
+
+.status {
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 70px;
+  text-align: center;
+  padding: 2px;
+  margin-bottom: 8px;
+}
+
+.status.alive{
+  background-color: rgb(83, 175, 78);
+  color: black;
+}
+
+.status.dead{
+  background-color: rgb(182, 61, 61);
+  color: white;
+}
+
+.status.unknown{
+  background-color: transparent;
+  border: 1px #242424 solid;
 }
 
 #content-card > .card {
