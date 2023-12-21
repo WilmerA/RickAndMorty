@@ -7,6 +7,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --main-color: #64ca6e;
+
 }
 
 #search{
@@ -41,7 +44,7 @@
 }
 
 .status.alive{
-  background-color: rgb(83, 175, 78);
+  background-color: var(--main-color);
   color: black;
 }
 
@@ -69,3 +72,26 @@
   align-content: start;
 }
 
+.pagination-link.is-current {
+  background-color: var(--main-color);
+  font-weight: 700  ;
+  border-color: white;
+  color: #242424;
+}
+
+.pagination-link.is-current:hover {
+  color: #242424;
+}
+
+.pagination-link{
+  color: white;
+}
+
+.pagination-link, .pagination-next, .pagination-previous {
+  color: white;
+}
+
+.pagination-link:hover, .pagination-next:hover, .pagination-previous:hover {
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
