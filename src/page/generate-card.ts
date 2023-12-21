@@ -1,5 +1,5 @@
 
-export const generateCard = (name: string, urlImage: string, specie: string, status: string): string => {
+export const generateCard = (name: string, urlImage: string, specie: string, status: string, origin:string): string => {
 
     const statusClass = generateStatus(status)
 
@@ -15,7 +15,7 @@ export const generateCard = (name: string, urlImage: string, specie: string, sta
             <div class="media-content">
                     <div class="status ${statusClass}">${status}</div>
                     <p class="title is-4">${name}</p>
-                    <p class="subtitle is-6">${specie}</p>
+                    <p class="subtitle is-6">${specie}  -  ${origin}</p>
                 </div>
             </div>
             </div>
