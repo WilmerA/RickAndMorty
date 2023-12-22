@@ -12,8 +12,14 @@
 
 }
 
-#search{
+#content-input{
   width: 400px;
+}
+
+@media only screen and (max-width: 600px) {
+  #content-input{
+    width: 300px;
+  }
 }
 
 #header-search {
