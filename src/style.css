@@ -101,3 +101,7 @@
   color: var(--main-color);
   border-color: var(--main-color);
 }
+
+.pagination{
+  padding-top: 15px;
+}
