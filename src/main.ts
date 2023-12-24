@@ -1,10 +1,10 @@
-import { loadCards } from './page/load-cards';
-import { getAllCharacters } from './services/characters/get-all-characters';
+import { loadCards } from './page/cards/load-cards';
+import { getCharactersPerPages } from './services/characters/get-all-characters';
 import './style.css'
 
 
 const main = async () => {
-  const { results:characters} = await getAllCharacters();
+  const { results:characters} = await getCharactersPerPages();
   loadCards( characters );
 }
 
