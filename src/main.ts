@@ -1,5 +1,5 @@
 import { loadCards } from './page/cards/load-cards';
-import { getCharactersPerPages } from './services/characters/get-all-characters';
+import { getCharactersPerPages } from './services/characters/get-characters-per-pages';
 import './style.css'
 
 
