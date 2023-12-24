@@ -1,4 +1,4 @@
-import { ICharacter } from "../interfaces/data.interface";
+import { ICharacter } from "../../interfaces/data.interface";
 import { generateCard } from "./generate-card";
 
 export const loadCards = ( characters:ICharacter[] ) => {
