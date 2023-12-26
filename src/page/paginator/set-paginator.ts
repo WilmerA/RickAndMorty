@@ -11,7 +11,6 @@ const _clearPaginator = () => {
 
 export const setPaginator = ( page:number = 1, oldPage:number = 20 ) => {
     let itemsPaginator:HTMLElement;
-    let currentPage:number;
     if( page > 0 && page <= 5 ){
         _clearPaginator();
         itemsPaginator = createInitialPaginator(page, oldPage);
@@ -29,38 +28,5 @@ export const setPaginator = ( page:number = 1, oldPage:number = 20 ) => {
         itemsPaginator = generateFinalPaginator(page, oldPage);
         paginator?.appendChild(itemsPaginator);
     }
-
-    if( page < 1 ){
-        return 1;
-    }
-    
-    if( page > oldPage ){
-        return oldPage
-    }
-
-    return page;
 }
 
-const _listtenerButtonNext = () => {
-    const buttonNext = document.querySelector('.pagination-next');
-    buttonNext?.addEventListener( 'click', () => {
-        const currentElement = document.querySelector('.is-current');
-        const nextPage = Number(currentElement?.textContent) + 1;
-        setPaginator(nextPage);
-    })
-};
-
-const _listtenerButtonPrev = () => {
-    const buttonPrev = document.querySelector('.pagination-previous');
-    buttonPrev?.addEventListener( 'click', () => {
-        const currentElement = document.querySelector('.is-current');
-        const prevPage = Number(currentElement?.textContent) - 1;
-        setPaginator(prevPage);
-    } )
-};
-
-const _setListeners = () => {
-    _listtenerButtonNext();
-    _listtenerButtonPrev();
-};
-_setListeners();
