@@ -1,4 +1,16 @@
 
+export const createInitialPaginator = ( page:number ):HTMLElement => {
+    const luItem:HTMLElement = generateLuItem();
+    for (let index = 1; index <= 4; index++) {
+        const liItem = generateLiItem(index);
+        luItem.appendChild(liItem);
+    }
+    const elipsis = generateElipsisItem();
+    luItem.appendChild(elipsis);
+    const finalItem = generateLiItem(86);
+    luItem.appendChild(finalItem);
+    return luItem;
+}
 
 const generateLuItem = ():HTMLElement => {
     const luItem:HTMLElement = document.createElement('lu');
@@ -9,8 +21,10 @@ const generateLuItem = ():HTMLElement => {
 const generateLiItem = ( page:number, current:boolean = false  ):HTMLElement => {
     const liItem = document.createElement('li');
     const aItem = document.createElement('a');
-    const isCurrent = current === true ? 'is-current' : '';
-    aItem.classList.add('pagination-link', isCurrent);
+    if( current ){
+        aItem.classList.add('is-current');
+    }
+    aItem.classList.add('pagination-link');
     aItem.setAttribute('aria-label', `Go to page ${page}`)
     aItem.textContent = `${page}`;
     liItem.appendChild(aItem);
@@ -21,7 +35,7 @@ const generateElipsisItem = ():HTMLElement => {
     const liItem = document.createElement('li');
     const spanItem = document.createElement('span');
     spanItem.classList.add('pagination-ellipsis');
-    spanItem.textContent = '&hellip;';
+    spanItem.innerHTML = '&hellip;';
     liItem.appendChild(spanItem);
     return liItem;
 }
