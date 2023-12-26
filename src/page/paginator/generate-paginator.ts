@@ -1,5 +1,5 @@
 
-export const createInitialPaginator = ( page:number ):HTMLElement => {
+export const createInitialPaginator = ( page:number, oldPage:number ):HTMLElement => {
     const luItem:HTMLElement = _generateLuItem();
     for (let index = 1; index <= 4; index++) {
         if( index === page ){
@@ -10,13 +10,36 @@ export const createInitialPaginator = ( page:number ):HTMLElement => {
         }
         const liItem = _generateLiItem(index);
         luItem.appendChild(liItem);
-    }
+    };
     const elipsis = _generateElipsisItem();
     luItem.appendChild(elipsis);
-    const finalItem = _generateLiItem(86);
+    const finalItem = _generateLiItem(oldPage);
     luItem.appendChild(finalItem);
     return luItem;
 }
+
+export const generateStandarPaginator = ( page:number, oldPage:number ) => {
+    const luItem:HTMLElement = _generateLuItem();
+    const firstLiItem = _generateLiItem(1);
+    luItem.appendChild(firstLiItem);
+    const firstElipsis = _generateElipsisItem();
+    luItem.appendChild(firstElipsis);
+    for (let index = page - 1; index <= (page + 1); index++) {
+        if( index === page ){
+            const isCurrent:boolean = true;
+            const liItem = _generateLiItem(index, isCurrent);
+            luItem.appendChild(liItem);
+            continue;
+        }
+        const liItem = _generateLiItem(index);
+        luItem.appendChild(liItem);
+    };
+    const secondElipsis = _generateElipsisItem();
+    luItem.appendChild(secondElipsis);
+    const finalItem = _generateLiItem(oldPage);
+    luItem.appendChild(finalItem);
+    return luItem;
+};
 
 const _generateLuItem = ():HTMLElement => {
     const luItem:HTMLElement = document.createElement('lu');
