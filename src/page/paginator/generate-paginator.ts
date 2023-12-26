@@ -41,6 +41,25 @@ export const generateStandarPaginator = ( page:number, oldPage:number ) => {
     return luItem;
 };
 
+export const generateFinalPaginator = ( page:number, oldPage:number ) => {
+    const luItem:HTMLElement = _generateLuItem();
+    const firstLiItem = _generateLiItem(1);
+    luItem.appendChild(firstLiItem);
+    const elipsis = _generateElipsisItem();
+    luItem.appendChild(elipsis);
+    for (let index = (oldPage - 4); index <= oldPage; index++) {
+        if( index === page ){
+            const isCurrent:boolean = true;
+            const liItem = _generateLiItem(index, isCurrent);
+            luItem.appendChild(liItem);
+            continue;
+        }
+        const liItem = _generateLiItem(index);
+        luItem.appendChild(liItem);
+    }
+    return luItem;
+};
+
 const _generateLuItem = ():HTMLElement => {
     const luItem:HTMLElement = document.createElement('lu');
     luItem.classList.add('pagination-list');
