@@ -1,1 +1,1 @@
-export const baseUrl = 'https://rickandmortyapi.com/api/';
+export const baseUrl:string = 'https://rickandmortyapi.com/api/';

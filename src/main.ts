@@ -4,7 +4,7 @@ import { getCharactersPerPages } from './services/characters/get-characters-per-
 import './style.css'
 
 
-const main = async () => {
+const main = async ():Promise<void> => {
   const { results:characters} = await getCharactersPerPages();
   loadCards( characters );
   setPaginator()
