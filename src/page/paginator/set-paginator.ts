@@ -2,13 +2,20 @@ import { createInitialPaginator } from "./generate-paginator";
 
 const paginator = document.querySelector('.pagination');
 
-export const setPaginator = ( page:number = 1 ) => {
+const _clearPaginator = () => {
     const ulItem = document.querySelector('.pagination-list');
     if( ulItem ){
         ulItem.remove();
     }
-    const itemsPaginator:HTMLElement = createInitialPaginator(page);
-    paginator?.appendChild(itemsPaginator);
+};
+
+export const setPaginator = ( page:number = 1 ) => {
+    let itemsPaginator:HTMLElement;
+    if( page > 0 && page <= 4 ){
+        _clearPaginator();
+        itemsPaginator = createInitialPaginator(page);
+        paginator?.appendChild(itemsPaginator);
+    }
     console.log(page);    
     return page;
 }
