@@ -11,13 +11,13 @@ const _clearPaginator = () => {
 
 export const setPaginator = ( page:number = 1, oldPage:number = 86 ) => {
     let itemsPaginator:HTMLElement;
-    if( page > 0 && page <= 4 ){
+    if( page > 0 && page <= 5 ){
         _clearPaginator();
         itemsPaginator = createInitialPaginator(page, oldPage);
         paginator?.appendChild(itemsPaginator);
     };
 
-    if( page > 4 && page < (oldPage - 4) ){
+    if( page > 5 && page < (oldPage - 5) ){
         _clearPaginator();
         itemsPaginator = generateStandarPaginator(page, oldPage);
         paginator?.appendChild(itemsPaginator);

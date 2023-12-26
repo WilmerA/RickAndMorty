@@ -1,7 +1,7 @@
 
 export const createInitialPaginator = ( page:number, oldPage:number ):HTMLElement => {
     const luItem:HTMLElement = _generateLuItem();
-    for (let index = 1; index <= 4; index++) {
+    for (let index = 1; index <= 5; index++) {
         if( index === page ){
             const isCurrent:boolean = true;
             const liItem = _generateLiItem(index, isCurrent);
