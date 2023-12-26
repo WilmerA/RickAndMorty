@@ -11,6 +11,7 @@ const _clearPaginator = () => {
 
 export const setPaginator = ( page:number = 1, oldPage:number = 20 ) => {
     let itemsPaginator:HTMLElement;
+    let currentPage:number;
     if( page > 0 && page <= 5 ){
         _clearPaginator();
         itemsPaginator = createInitialPaginator(page, oldPage);
@@ -29,7 +30,14 @@ export const setPaginator = ( page:number = 1, oldPage:number = 20 ) => {
         paginator?.appendChild(itemsPaginator);
     }
 
-    console.log(page);    
+    if( page < 1 ){
+        return 1;
+    }
+    
+    if( page > oldPage ){
+        return oldPage
+    }
+
     return page;
 }
 
