@@ -1,8 +1,6 @@
 
 export const generateCard = (name: string, urlImage: string, specie: string, status: string, origin:string): string => {
-
-    const statusClass = generateStatus(status)
-
+    const statusClass:string = _generateStatus(status)
     return `
         <div class="card">
             <div class="card-image">
@@ -23,10 +21,8 @@ export const generateCard = (name: string, urlImage: string, specie: string, sta
     `
 };
 
-const generateStatus = (status: string) => {
-
-    let statusClass;
-
+const _generateStatus = (status: string):string => {
+    let statusClass:string;
     switch (status) {
         case 'Alive':
             statusClass = 'alive';
@@ -38,7 +34,5 @@ const generateStatus = (status: string) => {
             statusClass = 'unknown';
             break;
     }
-
     return statusClass
-
-}
+};

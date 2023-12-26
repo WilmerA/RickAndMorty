@@ -7,13 +7,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   --main-color: #64ca6e;
-
 }
 
 #content-input{
-  width: 400px;
+  width: 600px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -69,7 +67,7 @@
 }
 
 #container-cards {
-  padding-top: 50px;
+  padding-top: 20px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -100,4 +98,9 @@
 .pagination-link:hover, .pagination-next:hover, .pagination-previous:hover {
   color: var(--main-color);
   border-color: var(--main-color);
+}
+
+.pagination{
+  padding-top: 5px;
+  margin: 15px;
 }
