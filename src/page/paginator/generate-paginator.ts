@@ -2,6 +2,12 @@
 export const createInitialPaginator = ( page:number ):HTMLElement => {
     const luItem:HTMLElement = generateLuItem();
     for (let index = 1; index <= 4; index++) {
+        if( index === page ){
+            const isCurrent:boolean = true;
+            const liItem = generateLiItem(index, isCurrent);
+            luItem.appendChild(liItem);
+            continue;
+        }
         const liItem = generateLiItem(index);
         luItem.appendChild(liItem);
     }
