@@ -1,4 +1,5 @@
 import { createInitialPaginator, generateFinalPaginator, generateStandarPaginator } from "./generate-paginator";
+import { listenerPaginatorNumbers } from "./listeners-paginator-numbers";
 
 const paginator = document.querySelector('.pagination');
 
@@ -15,18 +16,21 @@ export const setPaginator = ( page:number = 1, oldPage:number = 20 ) => {
         _clearPaginator();
         itemsPaginator = createInitialPaginator(page, oldPage);
         paginator?.appendChild(itemsPaginator);
+        listenerPaginatorNumbers();
     };
 
     if( page > 5 && page <= (oldPage - 5) ){
         _clearPaginator();
         itemsPaginator = generateStandarPaginator(page, oldPage);
         paginator?.appendChild(itemsPaginator);
+        listenerPaginatorNumbers();
     }
     
     if( page <= oldPage && page > (oldPage - 5) ){
         _clearPaginator();
         itemsPaginator = generateFinalPaginator(page, oldPage);
         paginator?.appendChild(itemsPaginator);
+        listenerPaginatorNumbers();
     }
 }
 
